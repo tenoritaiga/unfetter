@@ -65,7 +65,7 @@
 - include_role:
     name: gateway
   vars:
-    image_name: "nginx:1.13.5-alpine"
+    image_name: "nginxinc/nginx-unprivileged:1.14-alpine"
   when:
     - build_action == 'local'
 # If not running in dev mode, then we are pulling the gateway from the registry

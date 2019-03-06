@@ -5,7 +5,7 @@
     #build_action: "pull" 
     #run_action: "demo"
     #use_unfetter_ui: true
-    #use_uac: true
+    use_uac: false
     #use_taxii: false
     #run_mode: "dev"
     #registry: "unfetter/"

@@ -1,4 +1,4 @@
-FROM nginx:1.13.5-alpine
+FROM nginxinc/nginx-unprivileged:1.14-alpine
 
 LABEL maintainer "unfetter"
 LABEL Description="Nginx server with compiled unfetter ui files"
