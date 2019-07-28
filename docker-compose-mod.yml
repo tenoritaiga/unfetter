@@ -87,6 +87,7 @@ services:
   unfetter-threat-ingest:
     container_name: unfetter-threat-ingest
     image: unfetter/unfetter-threat-ingest:0.3.12
+    user: "9000:9000"
     ports:
       - "5010:5010"
     environment:
