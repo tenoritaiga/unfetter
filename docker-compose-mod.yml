@@ -29,28 +29,16 @@ services:
 
   unfetter-discover-openssl:
     image: svagi/openssl:latest
+    user: "9000:9000"
     container_name: unfetter-discover-openssl
-    entrypoint:
-     - openssl
-     - req
-     - -subj
-     - /CN=localhost/DC=localhost/DC=localdomain
-     - -new
-     - -newkey
-     - rsa:2048
-     - -days
-     - "365"
-     - -nodes
-     - -x509
-     - -keyout
-     - /tmp/certs/server.key
-     - -out
-     - /tmp/certs/server.crt
+    entrypoint: /tmp/scripts/openssl-entrypoint.sh
     volumes:
+     - ./config/scripts/:/tmp/scripts
      - ./certs/:/tmp/certs
 
   unfetter-discover-processor:
     image: unfetter/unfetter-discover-processor:0.3.12
+    user: "9000:9000"
     container_name: unfetter-discover-processor
     links:
     - unfetter-pattern-handler
